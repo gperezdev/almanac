@@ -1,0 +1,117 @@
+@use 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+@mixin flex($flex, $flex-direction, $align-items){
+    display: $flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+}
+@mixin time__element(){
+    width: 4rem;
+    &__number{
+        line-height: 4rem;
+        font-size: 4rem;
+        font-weight: 100;
+    }
+    &__text{
+        font-size:1rem;
+        font-weight: 300;
+    }
+}
+@mixin date__selector__element($font-size){
+    font-size: $font-size;
+    margin: 2rem;
+    padding: 0.5rem 2rem;
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 0.25rem;
+    backdrop-filter: blur(0.2rem);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: transform 0.25s ease-in-out;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.40);
+        transform: scale3d(110%)
+    }
+}
+body{
+    @include flex(flex, column, center);
+    overflow-x: hidden;
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+    color: ghostwhite;
+    font-family: "Montserrat", sans-serif;
+    background-image: linear-gradient(to top, rgba(8, 27, 53, 0.3137254902) 0%, rgba(8, 27, 53, 0.7176470588) 100%), url("/img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+.date__selector{
+    @include flex(flex, column, center);
+    &__date{
+        @include date__selector__element(1.25rem);
+        text-align: center;
+    }
+    &__button{
+        @include date__selector__element(1.5rem);
+        font-size: 2rem;
+    }
+}
+.countdown{
+    @include flex(flex, row, center);
+    z-index: 5;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 3rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 3.5rem;
+    gap: 4rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    backdrop-filter: blur(0.2rem);
+
+    &__days{
+        @include flex(flex, column, center);
+        @include time__element();
+    }
+    &__hours{
+        @include flex(flex, column, center);
+        @include time__element();
+    }
+    &__minutes{
+        @include flex(flex, column, center);
+        @include time__element();
+    }
+    &__seconds{
+        @include flex(flex, column, center);
+        @include time__element();
+    }
+}
+.title{
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+    text-align: center;
+    font-size: 2.5rem;
+    letter-spacing: 1rem;
+}
+
+.date__selector__button-disabled{
+    color: rgba(248, 248, 255, 0.479);
+    background-color: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.rotate{
+    animation: rotation 1s forwards;
+}
+
+@keyframes rotation{
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 180deg;
+    }
+}

@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap");
+:root {
+  --negro: #393939;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+@media (prefers-contrast: high) {
+  :root {
+    --negro: black ;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    transition: none !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  color: var(--negro);
+  line-height: 1.4em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+  justify-content: center;
+  min-height: 100vh;
+  color: ghostwhite;
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(to top, rgba(8, 27, 53, 0.3137254902) 0%, rgba(8, 27, 53, 0.7176470588) 100%), url("/img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.date__selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.date__selector__date {
+  font-size: 1.25rem;
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.25s ease-in-out;
+  text-align: center;
+  width: 60%;
+  color: ghostwhite;
+}
+.date__selector__date:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale3d(110%);
+}
+.date__selector__button {
+  font-size: 1.5rem;
+  margin: 2rem;
+  padding: 0.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.25s ease-in-out;
+  font-size: 2rem;
+}
+.date__selector__button:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: scale3d(110%);
+}
+
+.countdown {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 5;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 3rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3.5rem;
+  gap: 3rem;
+  max-width: 20rem;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  -webkit-backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.2rem);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+@media only screen and (max-width:400px){
+
+  .title{
+    font-size: 2rem !important;
+  }
+  .countdown{
+    gap:2rem;
+    padding:3rem
+  }
+}
+
+.countdown__days {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4rem;
+}
+.countdown__days__number {
+  line-height: 4rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.countdown__days__text {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.countdown__hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4rem;
+}
+.countdown__hours__number {
+  line-height: 4rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.countdown__hours__text {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.countdown__minutes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4rem;
+}
+.countdown__minutes__number {
+  line-height: 4rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.countdown__minutes__text {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.countdown__seconds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 4rem;
+}
+.countdown__seconds__number {
+  line-height: 4rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+.countdown__seconds__text {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.title {
+  margin-top: 2.5rem;
+  margin-left: 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 1rem;
+}
+
+.date__selector__button-disabled {
+  color: rgba(248, 248, 255, 0.479);
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.rotate {
+  -webkit-animation: rotation 1s forwards;
+          animation: rotation 1s forwards;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 180deg;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 180deg;
+  }
+}/*# sourceMappingURL=styles.css.map */
