@@ -6,6 +6,8 @@ Al ser una aplicación que funciona en tiempo real, no es necesario tener que re
 
 🖥️ HTML, CSS/SCSS y JavaScript.
 
+🌐 https://gperez-almanac.netlify.app/
+
 
 ---
 
@@ -17,6 +19,8 @@ Com és una aplicació que funciona en temps real, no es necessari haver de reca
 
 🖥️ HTML, CSS/SCSS i JavaScript.
 
+🌐 https://gperez-almanac.netlify.app/
+
 ---
 
 # [EN] ⏳ALMANAC
@@ -26,6 +30,8 @@ Com és una aplicació que funciona en temps real, no es necessari haver de reca
 As it is a real-time application, it is not necessary to reload the page in order to enter new parameters in the calendar.
 
 🖥️ HTML, CSS/SCSS and JavaScript.
+
+🌐 https://gperez-almanac.netlify.app/
 
 
 
